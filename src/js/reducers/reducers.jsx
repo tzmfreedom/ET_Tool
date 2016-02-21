@@ -65,6 +65,8 @@ function ETDeploy(state = {
         }];
       } else if (action.results.results) {
         results = action.results.results;
+      } else {
+        results = action.results;
       }
       return Object.assign({}, state, {
         results,
