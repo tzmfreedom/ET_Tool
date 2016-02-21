@@ -176,7 +176,6 @@ export default class ETDialog extends React.Component {
           <ul>
             {
               this.props.deploy.results.map((result, i) => {
-                console.log(result);
                 return <li key={i}>{result.Message ? result.Message : `[${result.StatusCode}] ${result.Object.Name}: ${result.StatusMessage}`}</li>;
               })
             }

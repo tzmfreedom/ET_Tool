@@ -89,14 +89,13 @@ export function etCopy(client, clientId, clientSecret, stack, resources) {
           }
           return resource;
         });
-        console.log(resourcesWithFields);
-        //dispatch();
+        //console.log(resourcesWithFields);
         return Q.all(resourcesWithFields.map(createDataExtensions))
       }).then((results) => {
-        console.log(results);
-        dispatch(etShowResults(results));
+        dispatch(etShowResults(results.map((result) => {
+          return result[0];
+        })));
       }).fail((error) => {
-        console.log(error);
         dispatch(etShowResults(error));
       });
   };
