@@ -21,7 +21,7 @@ app.on('window-all-closed', function() {
 app.on('ready', function() {
   Menu.setApplicationMenu(menu);
   // Create the browser window.
-  var mainWindow = new BrowserWindow({width: 800, height: 600});
+  var mainWindow = new BrowserWindow({width: 800, height: 600, title: 'ExactTarget Tools'});
 
   // and load the index.html of the app.
   mainWindow.loadURL('file://' + __dirname + '/dist/index.html');
